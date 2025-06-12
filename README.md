@@ -39,7 +39,33 @@
             box-shadow: 0 15px 35px rgba(0,0,0,0.3);
             overflow: hidden;
             backdrop-filter: blur(10px);
-        }        
+        }       
+
+  .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
         .header p {
             font-size: 18px;
             opacity: 0.9;

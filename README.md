@@ -1014,7 +1014,7 @@
                     },
                     example: "I'm confused about fractions in math class. The part that doesn't make sense is why we do certain steps, I learn best when seeing pictures and diagrams, and I want to actually understand it."
                 },
-{
+		{
                     title: "✖️ Master Multiplication Tables",
                     description: "Learn fun tricks and strategies to memorize multiplication facts",
                     prompt: "I'm struggling to memorize [TABLES] multiplication tables. My biggest challenge is [CHALLENGE], my learning style is [STYLE], and I want to [GOAL].",
@@ -1622,7 +1622,6 @@
                     },
                     example: "I often feel very angry and frustrated when things don't go as planned. When this happens, I lash out at others, this causes damaged relationships, and I want to express feelings appropriately."
                 },
-
 		{
   title: "💞 Cultivate Empathy and Compassion",
   description: "Improve your ability to understand others’ feelings and respond supportively",
@@ -1663,7 +1662,6 @@
   },
   example: "When someone seems sad or upset, I usually give advice immediately. I struggle with understanding their perspective, and I want to listen without interrupting."
 },
-
 {
   title: "🎯 Identify Emotional Triggers",
   description: "Spot patterns that set off intense feelings so you can respond more mindfully",
@@ -1712,7 +1710,7 @@
   },
   example: "I often feel anxious and restless when tight deadlines loom. At that moment, I tend to overthink endlessly, which leads to increased stress, and I want to recognize triggers early."
 },
-                {
+{
                     title: "🌟 Celebrate Your Wins and Growth",
                     description: "Learn to recognize your achievements and feel proud of your progress",
                     prompt: "When I accomplish something, I [REACTION]. I don't celebrate because [REASONS], but I want to [GOAL] and learn to [SKILL].",
@@ -1843,7 +1841,6 @@
   },
   example: "I want to plan a weekly game night with my family. Sometimes they are busy with work, I feel disconnected, and I hope we can enjoy time together."
 },
-
                 {
                     title: "💰 Have Mature Money Conversations",
                     description: "Learn to discuss money, purchases, and financial responsibility appropriately",
@@ -2020,7 +2017,6 @@
     },
     example: "When setbacks occur in my studies, I tend to get discouraged. These setbacks are often unexpected busy days, I plan to build buffer time, and I want to bounce back quickly."
 }
-
             ],
             'digital': [
                 {
@@ -2403,25 +2399,21 @@
                 }
             ]
         };
-
         function showSection(sectionId) {
             const sections = document.querySelectorAll('.section');
             sections.forEach(section => section.classList.remove('active'));
             document.getElementById(sectionId).classList.add('active');
         }
-
         function showCategory(categoryId) {
             showSection(categoryId);
             if (categoryId !== 'subjects') {
                 loadCategoryPrompts(categoryId);
             }
-        }
-        
+        }     
         function showSubject(subjectId) {
             showSection(subjectId);
             loadCategoryPrompts(subjectId);
         }
-
         function loadCategoryPrompts(categoryId) {
             const content = document.getElementById(categoryId + '-content');
             if (content && studentPrompts[categoryId]) {
@@ -2433,22 +2425,20 @@
                 `).join('');
             }
         }
-
         function openModal(categoryId, promptIndex) {
             const prompt = studentPrompts[categoryId][promptIndex];
             currentPromptData = prompt;
             currentPromptText = prompt.prompt;
             selectedValues = {};
-            
+	    
             document.getElementById('modalTitle').textContent = prompt.title;
             document.getElementById('interactivePrompt').style.display = 'block';
             document.getElementById('modalPromptText').style.display = 'none';
             document.getElementById('modalExample').style.display = 'none';
             document.getElementById('promptModal').style.display = 'block';
             
-            buildInteractivePrompt();
+	buildInteractivePrompt();
         }
-
         function buildInteractivePrompt() {
             const promptBuilder = document.getElementById('promptBuilder');
             let promptText = currentPromptData.prompt;

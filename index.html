@@ -562,10 +562,42 @@
         </div>
         
         <div class="ai-banner">
-            <div style="text-align: center; margin-bottom: 10px;">
-                <span style="margin-right: 10px;">🚀 AI Tools:</span>
-                <button onclick="openChatGPT()" class="chatgpt-button">Open ChatGPT</button>
-                <button onclick="openClaude()" class="claude-button">Open Claude</button>
+            <div style="text-align: center; margin-bottom: 15px;">
+                <span style="margin-right: 10px;">🤖 AI Chat Assistants:</span>
+                <button onclick="toggleChat('chatgpt')" class="chatgpt-button" id="chatgpt-toggle">ChatGPT</button>
+                <button onclick="toggleChat('claude')" class="claude-button" id="claude-toggle">Claude</button>
+                <button onclick="toggleChat('both')" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: 1px solid rgba(102, 126, 234, 0.5); padding: 8px 15px; border-radius: 20px; font-size: 12px; cursor: pointer; margin: 0 5px; transition: all 0.3s ease;">Both</button>
+            </div>
+            
+            <!-- Chat Windows Container -->
+            <div id="chat-container" style="display: none; margin-top: 20px;">
+                <div class="chat-layout" id="chat-layout">
+                    <!-- ChatGPT Chat Window -->
+                    <div class="chat-window" id="chatgpt-chat" style="display: none;">
+                        <div class="chat-header chatgpt-header">
+                            <span>💬 ChatGPT Assistant</span>
+                            <button onclick="clearChat('chatgpt')" class="clear-chat-btn">Clear</button>
+                        </div>
+                        <div class="chat-messages" id="chatgpt-messages"></div>
+                        <div class="chat-input-container">
+                            <textarea id="chatgpt-input" placeholder="Type your message or paste a prompt..." rows="2"></textarea>
+                            <button onclick="sendMessage('chatgpt')" class="send-btn" id="chatgpt-send">Send</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Claude Chat Window -->
+                    <div class="chat-window" id="claude-chat" style="display: none;">
+                        <div class="chat-header claude-header">
+                            <span>🧠 Claude Assistant</span>
+                            <button onclick="clearChat('claude')" class="clear-chat-btn">Clear</button>
+                        </div>
+                        <div class="chat-messages" id="claude-messages"></div>
+                        <div class="chat-input-container">
+                            <textarea id="claude-input" placeholder="Type your message or paste a prompt..." rows="2"></textarea>
+                            <button onclick="sendMessage('claude')" class="send-btn" id="claude-send">Send</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         
